@@ -1,21 +1,39 @@
 {
-	"name": "blueprint-core-nuxt",
-	"type": "module",
-	"private": true,
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
-	},
-	"dependencies": {
-		"nuxt": "^4.2.2",
-		"vue": "^3.5.18",
-		"vue-router": "^4.5.1"
-	},
-	"devDependencies": {
-		"@storyblok/nuxt": "^9.0.0",
-		"vite-plugin-mkcert": "^1.17.8"
-	}
+  "name": "nuxt-storyblok-schema",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "mkcert": "mkcert -cert-file certs/localhost.pem -key-file certs/localhost-key.pem localhost 127.0.0.1 ::1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck && pnpm schema:typecheck",
+    "schema:typecheck": "tsc --noEmit -p cms/tsconfig.json",
+    "schema:push": "storyblok schema push ./cms/src/schemaTypes/index.ts",
+    "schema:diff": "storyblok schema push ./cms/src/schemaTypes/index.ts --dry-run"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/image": "^2.1.0",
+    "@storyblok/nuxt": "^11.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.3",
+    "nuxt": "^4.5.2",
+    "tailwindcss": "^4.3.3",
+    "vue": "^3.5.43",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@stefanobartoletti/eslint-config": "^6.3.1",
+    "@storyblok/schema": "^0.4.2",
+    "eslint": "^10.11.0",
+    "storyblok": "4.23.0",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.11"
+  }
 }

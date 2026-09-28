@@ -1,40 +1,57 @@
-import mkcert from "vite-plugin-mkcert";
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  compatibilityDate: "2026-01-13",
-  devtools: { enabled: false },
-  modules: ["@storyblok/nuxt"],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@storyblok/nuxt',
+  ],
+
+  css: ['~/assets/css/main.css'],
 
   storyblok: {
     accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
     apiOptions: {
-      /** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
-      region: process.env.STORYBLOK_REGION || "eu",
-      /** The following code is only required when creating a Storyblok space directly via the Blueprints feature. */
-      endpoint: process.env.STORYBLOK_API_BASE_URL
-        ? `${new URL(process.env.STORYBLOK_API_BASE_URL).origin}/v2`
-        : undefined,
+      region: process.env.STORYBLOK_REGION || 'eu',
+    },
+    // Blocks are registered from `app/components/global/` instead (see README)
+    componentsDir: '',
+  },
+
+  runtimeConfig: {
+    public: {
+      // 'draft' | 'published', passed on every request
+      storyblokVersion: process.env.STORYBLOK_VERSION || 'published',
     },
   },
 
-  app: {
-    head: {
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css",
-        },
-      ],
+  image: {
+    provider: 'storyblok',
+    storyblok: {
+      baseURL: 'https://a.storyblok.com',
     },
   },
 
-  ssr: true,
-
-  devServer: {
-    https: true,
+  // Extended by eslint.config.mjs
+  eslint: {
+    config: {
+      standalone: false,
+    },
   },
 
   vite: {
-    plugins: [mkcert()],
+    plugins: [tailwindcss()],
   },
-});
+
+  // HTTPS for the Visual Editor: run `pnpm mkcert` once
+  devServer: {
+    https: {
+      key: './certs/localhost-key.pem',
+      cert: './certs/localhost.pem',
+    },
+  },
+
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
+})

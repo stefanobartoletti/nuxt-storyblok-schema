@@ -1,0 +1,9 @@
+minimumReleaseAgeExcludePrune: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 43200
+shamefullyHoist: true
+shellEmulator: true
+
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true

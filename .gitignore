@@ -13,6 +13,11 @@ node_modules
 logs
 *.log
 
+# Local SSL certs
+certs/*
+!certs/.gitkeep
+*.pem
+
 # Misc
 .DS_Store
 .fleet
@@ -23,5 +28,5 @@ logs
 .env.*
 !.env.example
 
-# Prettier
-.prettierrc
+# Storyblok CLI working directory (logs, reports, pulled components)
+.storyblok

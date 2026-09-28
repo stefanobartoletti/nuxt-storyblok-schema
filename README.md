@@ -1,78 +1,100 @@
+# Nuxt + Storyblok: schema as code
 
-# Storyblok Core Space Blueprint: Nuxt
+A minimal Nuxt site that defines its whole Storyblok schema in TypeScript and pushes it to the space with the Storyblok CLI, instead of building components by hand in the Storyblok UI. The same definitions also give the frontend fully typed content, so a block's Vue component knows its fields.
 
-Integrate [Nuxt](https://nuxt.com/) with [Storyblok](http://www.storyblok.com) as a headless CMS.
+The frontend is deliberately minimal: just enough templating to show each CMS feature.
 
-This blueprint is ideal for kickstarting new Storyblok and Next.js projects. What's inside:
-- Pre-configured default blocks: `page`, `teaser`, `grid`, and `feature`.
-- Support for the Visual Editor's live preview.
-- Dynamic routing to fetch and render new stories automatically.
-- Minimal styling.
+## What's inside
 
-> [!TIP]
-> Follow our [Nuxt guide](LINK) for a step-by-step walkthrough and learn more about Storyblok's range of features, including rich text rendering, custom content modeling, and internationalization. See the [@storyblok/nuxt package reference](https://storyblok.com/docs/packages/storyblok-nuxt) for further information.
+**Content types**
 
-***
+- `page`: the default content type every Storyblok space ships with, redefined here. It has a `sections` field for the page builder, plus an SEO tab.
+- `blog-post`: title, a single rich text `content` field, cover image, publication date, summary and an SEO tab.
+- `settings`: a singleton story, at `config/site-config`, for the site title, main navigation and footer links.
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-dad4ff.svg?style=for-the-badge&logo=GitHub&logoColor=181717&labelColor=ffffff&color=dad4ff)](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=962644002&ref=main&geo=EuropeWest)
-[![Try Storyblok free](https://img.shields.io/badge/Try%20Storyblok-dad4ff.svg?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTQuNzA3IDIuNTM4aDIyLjUyOXYyMy41ODdINC43MDd6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggZmlsbD0iIzFmMWYxZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMS43NDMgMi42MDFBMi41OTcgMi41OTcgMCAwIDEgNC4zMzUgMGgyMy4zM2EyLjU5NyAyLjU5NyAwIDAgMSAyLjU5MiAyLjYwMXYyMy40MTFhMi41OTcgMi41OTcgMCAwIDEtMi41OTIgMi42MDJIMTIuNTQ4bC0zLjg3MiAzLjIwOGEuNzcuNzcgMCAwIDEtMS4yNjEtLjU5N3YtMi42MTFoLTMuMDhhMi41OTcgMi41OTcgMCAwIDEtMi41OTItMi42MDJabTUuNjcgMi4xMjdoMTIuNDYyYzIuNjkxIDAgNC44NzMgMi4xOSA0Ljg3MyA0Ljg5IDAgMi4xNjQtMS40IDQtMy4zNDIgNC42NDRhNC44ODcgNC44ODcgMCAwIDEgMy45OSA0LjgxYzAgMi43MDEtMi4xODEgNC44OS00Ljg3MyA0Ljg5SDcuNDEzdi05LjQ1NFptMTAuMzY0IDQuNEgxMS45NXYyLjkzNGg1LjgyOGMuODA4IDAgMS40NjItLjY1NiAxLjQ2Mi0xLjQ2NyAwLS44MS0uNjU0LTEuNDY3LTEuNDYyLTEuNDY3em0tNS44MjggNi41Mmg2LjMxNGMuODk3IDAgMS42MjQuNzMgMS42MjQgMS42MyAwIC45MDEtLjcyNyAxLjYzLTEuNjI0IDEuNjNoLTYuMzE0eiIgY2xpcC1ydWxlPSJldmVub2RkIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjEuNTE3NzUiLz48L3N2Zz4K&labelColor=ffffff)](https://app.storyblok.com/#/signup)
-[![Join the Storyblok Discord community](https://img.shields.io/discord/700316478792138842?style=for-the-badge&logo=discord&label=Join%20our%20community&labelColor=ffffff&color=dad4ff)](https://storyblok.com/join-discord)
+**Sections** (page builder): `section-hero`, `section-cards` and `section-latest-posts`. The latest posts section queries blog posts by content type. With its limit left empty it lists every post, so it also works as the blog index.
 
-## Get Started
+**Components** (nested blocks): `button`, `card` and `nav-link`.
 
-**No Storyblok account yet? [Sign up now](https://app.storyblok.com/#/signup?utm_source=docs) to experience a 14-day free trial of all features and enjoy our completely free Starter plan.**
+**Shared field group:** `seoMeta` is one tab plus its fields, spread into every routable content type.
 
-1. Create an empty new Storyblok space
-2. Create a new repository based on this template
-3. Open the project on your device
-4. Install dependencies
+## How the schema works
 
-```sh
-npm install
+```
+cms/src/schemaTypes/
+├── index.ts           # Registry: every block, and the entry point for `schema push`
+├── lib.ts             # Block folders, icon colours, rich text toolbar
+├── fieldGroups/       # Fields reused across blocks (seoMeta)
+├── documents/         # Routable content types (page, blog-post)
+├── sections/          # Page-builder sections
+├── components/        # Blocks nested inside sections
+└── singletons/        # One-off stories (settings)
 ```
 
-### Authentication
+- Each block is a `defineBlock(...)` with `defineField(...)` entries, from [`@storyblok/schema`](https://www.npmjs.com/package/@storyblok/schema).
+- A `bloks` field lists its allowed blocks with `allow: [...]`, which does two things. In Storyblok it restricts what editors can insert. In TypeScript it narrows the delivered type, so a hero's `buttons` is typed as `Content<'button'>[]` rather than an untyped array.
+- `shared/index.ts` holds `ROUTABLE_DOCUMENT_TYPES`, which both sides read:
+  - the schema uses it to limit link fields to stories that have a URL;
+  - the catch-all route uses it to return a 404 for everything else, such as `/config/site-config`.
+- `app/utils/cmsFragments.ts` derives `Content<'block-name'>` from the schema. Every component types its `blok` prop with it, so a renamed or removed field is a type error rather than a blank spot on the page.
 
-In the root of the project, create a `.env` file to store the access token of your space:
+### Workflow
 
 ```sh
-STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_YOUR_TOKEN>
+pnpm schema:typecheck                # check the definitions
+pnpm schema:diff                     # dry run: show what would change in the space
+pnpm schema:push                     # apply it
+pnpm schema:push --delete            # also delete blocks no longer in the registry
 ```
 
-> [!TIP]
-> Copy your space's preview access token from **Settings** > **Access Tokens**.
-> Learn more about Storyblok [access tokens](https://www.storyblok.com/docs/concepts/access-tokens).
+To add a block:
 
-### Connect the Visual Editor
+1. Define it in the right folder.
+2. Register it in `index.ts`.
+3. Add it to the `allow` list of the field that should contain it.
+4. Create the matching component under `app/components/global/`. Nuxt's `global/` naming convention maps block names to component names: `section/Hero.vue` becomes `SectionHero`, which is the component that renders `section-hero`.
 
-To render a preview of the local project in the Visual Editor, follow these steps:
+## Getting started
 
-1. In your space, navigate to **Settings > Visual Editor**.
-2. Set the default environment to `https://localhost:3000/`.
-3. Save.
-4. Open the `home` story.
-5. Click **Config**.
-6. Type `/` in the **Real path**.
+1. Install dependencies: `pnpm install`
+2. Copy `.env.example` to `.env` and fill in the space ID, a preview access token and the region.
+3. Log in to the CLI and push the schema:
 
-Run the development server:
-```sh
-npm run dev
-```
+   ```sh
+   pnpm storyblok login
+   pnpm schema:diff
+   pnpm schema:push --delete   # --delete removes the blueprint's teaser/grid/feature blocks
+   ```
 
-> [!IMPORTANT]
-> To connect the Storyblok Visual Editor, the local project must run over HTTPS. Learn more in the [Visual Editor concept](https://www.storyblok.com/docs/concepts/visual-editor#local-development-via-https). See the [Visual Preview part of the Nuxt guide](https://storyblok.com/docs/guides/nuxt/visual-preview) for detailed instructions.
+4. Create the content in Storyblok:
+   - a `config` folder with a story `site-config`, of content type **Site Settings**;
+   - a `blog` folder whose default content type is **Blog Post**, with a few posts in it;
+   - a `blog` start page (content type **Page**) containing a **Latest Posts** section with no limit;
+   - the `home` story, rebuilt with the new sections.
+5. Generate a local certificate. The Visual Editor needs HTTPS, and this step needs [mkcert](https://github.com/FiloSottile/mkcert) installed:
 
-Back in Storyblok, open the **Home** story to start editing.
+   ```sh
+   pnpm mkcert
+   ```
 
-Happy building!
+6. Start the dev server with `pnpm dev`. Then, in Storyblok, go to **Settings > Visual Editor** and set the preview URL to `https://localhost:3000/`.
 
-## Resources
+## Notes
 
-- To learn more about what you can do with Storyblok, visit [our documentation and learning hub](https://www.storyblok.com/docs).
-- To learn more about the integration between Storyblok and Nuxt, check our [dedicated developer tutorials](https://www.storyblok.com/tutorials?technologies=nuxt).
-- To learn more about Nuxt, check the [official documentation](https://nuxt.com/docs).
+- **Component registration:** blocks resolve to components by Nuxt's `global/` naming, so `global/section/Hero.vue` becomes `SectionHero`, which renders `section-hero`. The Storyblok module's own `componentsDir` is off because it would flatten that name to `Hero`.
+- **`allow` on `bloks` fields:** besides restricting the editor, it types the field. A field declared without it is an untyped array.
+- **`asBlok()`:** the SDK's blok type has no `null`, but the API returns `null` for empty fields. The cast only reconciles the types.
+- **`button`:** rendered by `ButtonLink.vue`, because `<StoryblokComponent>` would resolve the name `button` to the native element.
+- **Rich text links:** the default renderer emits story links as relative hrefs ([monoblok#146](https://github.com/storyblok/monoblok/issues/146)), so `RichtextLink.vue` routes them like `resolveLink`.
+- **`STORYBLOK_VERSION`:** read at build time. To change it on an already-built server, set `NUXT_PUBLIC_STORYBLOK_VERSION`.
 
-### Support
+## Scripts
 
-- Have questions, need help, want to chat with other users? [Join our Discord community](https://storyblok.com/join-discord).
-- Visit the Storyblok [Help Center](https://support.storyblok.com/hc/en-us).
+| Script | What it does |
+|---|---|
+| `pnpm dev` | Dev server, over HTTPS |
+| `pnpm build` / `pnpm generate` | SSR build or static build |
+| `pnpm typecheck` | Type-check the Nuxt app and the schema |
+| `pnpm lint` / `pnpm lint:fix` | Lint, or lint and auto-fix |
+| `pnpm schema:diff` / `pnpm schema:push` | Compare the schema with the space, or apply it |
+| `pnpm mkcert` | Generate the local HTTPS certificate |

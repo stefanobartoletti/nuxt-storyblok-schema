@@ -1,7 +1,9 @@
-<script setup>
-const currentYear = new Date().getFullYear();
-</script>
 <template>
-	<slot></slot>
-	<footer>All rights reserved © {{ currentYear }}</footer>
+  <div class="flex min-h-screen flex-col text-slate-900">
+    <SiteHeader />
+
+    <slot></slot>
+
+    <SiteFooter />
+  </div>
 </template>
