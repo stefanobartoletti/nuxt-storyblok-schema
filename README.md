@@ -87,6 +87,8 @@ To add a block:
 - `pnpm sample-content:push` uploads the images, then creates and publishes the stories in the space set in `.env`. It's meant for a fresh space: running it twice uploads the images twice.
 - `pnpm sample-content:pull` replaces the dump with the current content of the space in `.env`, stripping author details and preview tokens.
 
+Images are from [Unsplash](https://unsplash.com/license) via [Lorem Picsum](https://picsum.photos), by Davide Ragusa, Jonas Eriksson, Sebastien Gabriel, Kimberly Richards, Ruxandra Mateiu and Danka & Peter.
+
 ## Notes
 
 - **Component registration:** blocks resolve to components by Nuxt's `global/` naming, so `global/section/Hero.vue` becomes `SectionHero`, which renders `section-hero`. The Storyblok module's own `componentsDir` is off because it would flatten that name to `Hero`.
