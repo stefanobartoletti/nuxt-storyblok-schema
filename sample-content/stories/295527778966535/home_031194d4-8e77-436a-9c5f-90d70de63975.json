@@ -1,0 +1,182 @@
+{
+  "name": "Home",
+  "parent_id": 0,
+  "group_id": "e2a8d76e-14b8-41df-8a3f-3cc21d054cdf",
+  "alternates": [],
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "id": 224844836406210,
+  "uuid": "031194d4-8e77-436a-9c5f-90d70de63975",
+  "is_folder": false,
+  "content": {
+    "_uid": "c3d5415d-c0b7-48f0-8bec-81bb2b7b668b",
+    "sections": [
+      {
+        "_uid": "57391537-2696-4186-93a2-969466fe2f73",
+        "text": "Blocks defined in TypeScript, pushed with the CLI, rendered by typed Nuxt components.",
+        "title": "Storyblok schema as code",
+        "buttons": [
+          {
+            "_uid": "b51c89f8-ed0b-432f-a5b3-ccfeb79089d8",
+            "link": {
+              "id": "5bf3067a-4713-495b-8513-fcee740a0ab2",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "blog/"
+            },
+            "label": "Read the blog",
+            "variant": "solid",
+            "component": "button"
+          },
+          {
+            "_uid": "5102fb75-6c77-4b00-80df-8c74e34ba651",
+            "link": {
+              "id": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "about"
+            },
+            "label": "About",
+            "variant": "outline",
+            "component": "button"
+          }
+        ],
+        "component": "section-hero"
+      },
+      {
+        "_uid": "c1495e89-00f4-43ea-8900-cecf7578d042",
+        "cards": [
+          {
+            "_uid": "b46c83c5-e8ce-4dc4-b2b7-bd77b01272bc",
+            "text": "Blocks and fields live in cms/src/schemaTypes.",
+            "image": {
+              "id": 224882472068524,
+              "alt": "A still life",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/295527778966535/1600x900/ba38155b6b/card-code.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {}
+            },
+            "title": "Define",
+            "buttons": [],
+            "component": "card"
+          },
+          {
+            "_uid": "6db7bea7-244c-42de-ad12-c2e82406400c",
+            "text": "schema:diff shows the changes, schema:push applies them.",
+            "image": {
+              "id": 224882476893613,
+              "alt": "An open landscape",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/295527778966535/1600x900/80cb8c13ea/card-content.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {}
+            },
+            "title": "Push",
+            "buttons": [],
+            "component": "card"
+          },
+          {
+            "_uid": "98df0bac-5dea-4d8c-8ade-d3e8dc7f0cd7",
+            "text": "Each block maps to a typed Vue component.",
+            "image": {
+              "id": 224882482300334,
+              "alt": "A natural scene",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/295527778966535/1600x900/9d14204087/card-preview.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "meta_data": {}
+            },
+            "title": "Render",
+            "buttons": [
+              {
+                "_uid": "c020afe2-9f66-44e9-a554-0c517281ad9e",
+                "link": {
+                  "id": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "about"
+                },
+                "label": "Learn more",
+                "variant": "outline",
+                "component": "button"
+              }
+            ],
+            "component": "card"
+          }
+        ],
+        "title": "How it fits together",
+        "component": "section-cards"
+      },
+      {
+        "_uid": "6b38b925-435f-4f1f-a019-28ff027a8b97",
+        "limit": "2",
+        "title": "Latest posts",
+        "buttons": [
+          {
+            "_uid": "3779728d-7e22-4039-82de-994fcf48b5ae",
+            "link": {
+              "id": "5bf3067a-4713-495b-8513-fcee740a0ab2",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "blog/"
+            },
+            "label": "All posts",
+            "variant": "outline",
+            "component": "button"
+          }
+        ],
+        "component": "section-latest-posts"
+      }
+    ],
+    "component": "page",
+    "seo_image": null,
+    "seo_title": "",
+    "seo_description": "A minimal Nuxt site with a Storyblok schema defined in code."
+  },
+  "published": true,
+  "slug": "home",
+  "path": "/",
+  "full_slug": "home",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": null,
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "pinned": false,
+  "breadcrumbs": [],
+  "publish_at": null,
+  "expire_at": null,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": 0,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "variant_type": null,
+  "taxonomy_terms": [],
+  "experiment_ids": [],
+  "stage": null,
+  "stages": []
+}

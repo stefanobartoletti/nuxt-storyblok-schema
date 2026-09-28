@@ -1,0 +1,245 @@
+{
+  "name": "Typed content from the schema",
+  "parent_id": 224882491264764,
+  "group_id": "2a0711df-c934-43b4-86ee-21ecc4b09bf9",
+  "alternates": [],
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "id": 224882493484799,
+  "uuid": "08748b0b-06c7-4357-a2ba-78bebf69320e",
+  "is_folder": false,
+  "content": {
+    "_uid": "ffb1c4b0-1c9c-46a2-960c-eb4514e3e652",
+    "title": "Typed content from the schema",
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "How the same definitions give every Vue component a fully typed blok prop.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": null
+          },
+          "content": [
+            {
+              "text": "The idea",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Blocks, fields and folders are defined with ",
+              "type": "text"
+            },
+            {
+              "text": "@storyblok/schema",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ]
+            },
+            {
+              "text": " and pushed to the space. The ",
+              "type": "text"
+            },
+            {
+              "text": "about page",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "about",
+                    "uuid": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+                    "anchor": null,
+                    "target": "_self",
+                    "linktype": "story"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " has an overview.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bullet_list",
+          "content": [
+            {
+              "type": "list_item",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Schema changes go through code review",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list_item",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "A dry run shows the diff before pushing",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list_item",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Types follow the schema automatically",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "attrs": {
+            "id": 224882459940266,
+            "alt": "An abstract detail",
+            "src": "https://a.storyblok.com/f/295527778966535/1600x900/70b115372d/post-types.jpg",
+            "title": "",
+            "source": "",
+            "copyright": "",
+            "meta_data": {}
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2,
+            "textAlign": null
+          },
+          "content": [
+            {
+              "text": "In practice",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "If it is not in the registry, it is not in the space.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "This post is sample content, created through the Management API.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "How the same definitions give every Vue component a fully typed blok prop.",
+    "component": "blog-post",
+    "seo_image": null,
+    "seo_title": "",
+    "cover_image": {
+      "id": 224882459940266,
+      "alt": "An abstract detail",
+      "name": "",
+      "focus": "",
+      "title": "",
+      "filename": "https://a.storyblok.com/f/295527778966535/1600x900/70b115372d/post-types.jpg",
+      "copyright": "",
+      "fieldtype": "asset",
+      "meta_data": {}
+    },
+    "published_at": "2026-09-15 00:00",
+    "seo_description": ""
+  },
+  "published": true,
+  "slug": "typed-content",
+  "path": null,
+  "full_slug": "blog/typed-content",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 224882491264764,
+    "uuid": "2fb1707a-954d-4009-833e-652e6be0a592",
+    "name": "Blog",
+    "slug": "blog",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 224882491264764,
+      "name": "Blog",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "blog",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -10,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "variant_type": null,
+  "taxonomy_terms": [],
+  "experiment_ids": [],
+  "stage": null,
+  "stages": []
+}

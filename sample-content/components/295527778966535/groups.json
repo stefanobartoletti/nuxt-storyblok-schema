@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Components",
+    "id": 224868232358423,
+    "uuid": "23c4edbb-afa0-4906-b88a-2cc8ecb19f20",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "Documents",
+    "id": 224868232698392,
+    "uuid": "2151d32b-20b1-427b-974b-10715cae6a82",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "Sections",
+    "id": 224868232890905,
+    "uuid": "6bc3a089-401b-42bb-a18a-6fd1a52d643e",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "Singletons",
+    "id": 224868233103898,
+    "uuid": "4eb421ae-7ed0-44a5-824e-d54ef4f16125",
+    "parent_id": null,
+    "parent_uuid": null
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "name": "Site Config",
+  "parent_id": 224883083925162,
+  "group_id": "4da60dc1-3810-4b50-ae26-73cc48c08672",
+  "alternates": [],
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "id": 224882497859330,
+  "uuid": "6881792e-9cfa-4f11-8467-f00f385f5f65",
+  "is_folder": false,
+  "content": {
+    "_uid": "71144ab1-880f-43f2-ae9d-e440841fe788",
+    "component": "settings",
+    "footer_nav": [
+      {
+        "_uid": "461b4b25-3eb3-4119-b90e-407166356901",
+        "link": {
+          "id": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+          "url": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "about"
+        },
+        "label": "About",
+        "component": "nav-link"
+      },
+      {
+        "_uid": "bd267acf-c536-4db4-b063-68b2ec3f0a9c",
+        "link": {
+          "id": "5bf3067a-4713-495b-8513-fcee740a0ab2",
+          "url": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "blog/"
+        },
+        "label": "Blog",
+        "component": "nav-link"
+      },
+      {
+        "_uid": "0e786a3e-d17f-471d-8560-f979c03b9aef",
+        "link": {
+          "id": "",
+          "url": "https://www.storyblok.com/docs",
+          "target": "_blank",
+          "linktype": "url",
+          "fieldtype": "multilink",
+          "cached_url": "https://www.storyblok.com/docs"
+        },
+        "label": "Storyblok docs",
+        "component": "nav-link"
+      }
+    ],
+    "header_nav": [
+      {
+        "_uid": "8f646c9d-0eec-41ba-84d0-aac762067a75",
+        "link": {
+          "id": "031194d4-8e77-436a-9c5f-90d70de63975",
+          "url": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "home"
+        },
+        "label": "Home",
+        "component": "nav-link"
+      },
+      {
+        "_uid": "683c1ed2-e0e0-440d-a43e-fe5c59f4025e",
+        "link": {
+          "id": "5bf3067a-4713-495b-8513-fcee740a0ab2",
+          "url": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "blog/"
+        },
+        "label": "Blog",
+        "component": "nav-link"
+      },
+      {
+        "_uid": "4f7da055-e4bb-4a6f-a6d4-19254f47b30b",
+        "link": {
+          "id": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+          "url": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "about"
+        },
+        "label": "About",
+        "component": "nav-link"
+      }
+    ],
+    "site_title": "Schema Demo"
+  },
+  "published": true,
+  "slug": "site-config",
+  "path": null,
+  "full_slug": "config/site-config",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": {
+    "id": 224883083925162,
+    "uuid": "dc931940-7d64-4ff9-9a51-75148fdd058f",
+    "name": "Config",
+    "slug": "config",
+    "disble_fe_editor": false
+  },
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "pinned": false,
+  "breadcrumbs": [
+    {
+      "id": 224883083925162,
+      "name": "Config",
+      "parent_id": 0,
+      "disble_fe_editor": false,
+      "disable_fe_editor": false,
+      "path": null,
+      "slug": "config",
+      "translated_slugs": []
+    }
+  ],
+  "publish_at": null,
+  "expire_at": null,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -30,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "variant_type": null,
+  "taxonomy_terms": [],
+  "experiment_ids": [],
+  "stage": null,
+  "stages": []
+}

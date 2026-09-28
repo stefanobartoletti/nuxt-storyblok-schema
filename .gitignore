@@ -28,5 +28,8 @@ certs/*
 .env.*
 !.env.example
 
+# Sample content: id mappings are specific to the space pushed to
+sample-content/**/manifest.jsonl
+
 # Storyblok CLI working directory (logs, reports, pulled components)
 .storyblok

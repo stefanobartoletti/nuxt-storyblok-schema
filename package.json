@@ -15,7 +15,9 @@
     "typecheck": "nuxt typecheck && pnpm schema:typecheck",
     "schema:typecheck": "tsc --noEmit -p cms/tsconfig.json",
     "schema:push": "storyblok schema push ./cms/src/schemaTypes/index.ts",
-    "schema:diff": "storyblok schema push ./cms/src/schemaTypes/index.ts --dry-run"
+    "schema:diff": "storyblok schema push ./cms/src/schemaTypes/index.ts --dry-run",
+    "sample-content:pull": "node sample-content/sync.mjs pull",
+    "sample-content:push": "node sample-content/sync.mjs push"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.17.0",

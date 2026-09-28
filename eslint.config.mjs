@@ -12,6 +12,7 @@ export default withNuxt(
         typescript: true,
         ignores: [
           '**/public/**/*',
+          'sample-content/{components,stories,assets}/**/*',
         ],
       }, // Options, required
       vue,

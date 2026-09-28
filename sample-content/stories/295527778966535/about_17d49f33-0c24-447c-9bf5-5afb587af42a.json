@@ -1,0 +1,82 @@
+{
+  "name": "About",
+  "parent_id": 0,
+  "group_id": "36c6e36f-6b86-4ad0-ba8a-b1be9c81ceb5",
+  "alternates": [],
+  "deleted_at": null,
+  "sort_by_date": null,
+  "tag_list": [],
+  "id": 224882490273531,
+  "uuid": "17d49f33-0c24-447c-9bf5-5afb587af42a",
+  "is_folder": false,
+  "content": {
+    "_uid": "47b2172c-e232-423c-b911-f05254b08644",
+    "sections": [
+      {
+        "_uid": "39725364-4ffd-4282-b76e-c76802d036de",
+        "text": "A minimal Nuxt site whose Storyblok schema lives in TypeScript and is pushed with the CLI.",
+        "title": "About this demo",
+        "buttons": [],
+        "component": "section-hero"
+      },
+      {
+        "_uid": "d5d5cef6-aaea-4dfc-acb2-6dce63f86ef9",
+        "cards": [
+          {
+            "_uid": "c8f8b3ff-1dea-41c9-a6b5-982e53d6710d",
+            "text": "Every block is a defineBlock() call, versioned with the app.",
+            "image": null,
+            "title": "Blocks as code",
+            "buttons": [],
+            "component": "card"
+          },
+          {
+            "_uid": "f8f45e92-8433-4251-8c22-56ff7dc98c8b",
+            "text": "Components type their props from the same schema definitions.",
+            "image": null,
+            "title": "Typed content",
+            "buttons": [],
+            "component": "card"
+          }
+        ],
+        "title": "What it shows",
+        "component": "section-cards"
+      }
+    ],
+    "component": "page",
+    "seo_image": null,
+    "seo_title": "About",
+    "seo_description": "What this Storyblok schema demo is about."
+  },
+  "published": true,
+  "slug": "about",
+  "path": null,
+  "full_slug": "about",
+  "default_root": null,
+  "disble_fe_editor": false,
+  "disable_fe_editor": false,
+  "parent": null,
+  "is_startpage": false,
+  "unpublished_changes": false,
+  "meta_data": null,
+  "imported_at": null,
+  "pinned": false,
+  "breadcrumbs": [],
+  "publish_at": null,
+  "expire_at": null,
+  "user_ids": [],
+  "space_role_ids": [],
+  "translated_slugs": [],
+  "localized_paths": [],
+  "position": -10,
+  "translated_stories": [],
+  "can_not_view": false,
+  "is_scheduled": null,
+  "scheduled_dates": null,
+  "ideas": [],
+  "variant_type": null,
+  "taxonomy_terms": [],
+  "experiment_ids": [],
+  "stage": null,
+  "stages": []
+}

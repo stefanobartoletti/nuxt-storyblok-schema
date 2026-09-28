@@ -66,11 +66,12 @@ To add a block:
    pnpm schema:push --delete   # --delete removes the blueprint's teaser/grid/feature blocks
    ```
 
-4. Create the content in Storyblok:
-   - a `config` folder with a story `site-config`, of content type **Site Settings**;
-   - a `blog` folder whose default content type is **Blog Post**, with a few posts in it;
-   - a `blog` start page (content type **Page**) containing a **Latest Posts** section with no limit;
-   - the `home` story, rebuilt with the new sections.
+4. Load the sample content (see [Sample content](#sample-content)):
+
+   ```sh
+   pnpm sample-content:push
+   ```
+
 5. Generate a local certificate. The Visual Editor needs HTTPS, and this step needs [mkcert](https://github.com/FiloSottile/mkcert) installed:
 
    ```sh
@@ -78,6 +79,13 @@ To add a block:
    ```
 
 6. Start the dev server with `pnpm dev`. Then, in Storyblok, go to **Settings > Visual Editor** and set the preview URL to `https://localhost:3000/`.
+
+## Sample content
+
+`sample-content/` is a dump of a demo space made with the Storyblok CLI: pages, blog posts, the settings story, and their images. It's example content to see every block in use, not part of the app.
+
+- `pnpm sample-content:push` uploads the images, then creates and publishes the stories in the space set in `.env`. It's meant for a fresh space: running it twice uploads the images twice.
+- `pnpm sample-content:pull` replaces the dump with the current content of the space in `.env`, stripping author details and preview tokens.
 
 ## Notes
 
@@ -97,4 +105,5 @@ To add a block:
 | `pnpm typecheck` | Type-check the Nuxt app and the schema |
 | `pnpm lint` / `pnpm lint:fix` | Lint, or lint and auto-fix |
 | `pnpm schema:diff` / `pnpm schema:push` | Compare the schema with the space, or apply it |
+| `pnpm sample-content:push` / `pnpm sample-content:pull` | Load the sample content into a space, or refresh it from one |
 | `pnpm mkcert` | Generate the local HTTPS certificate |
