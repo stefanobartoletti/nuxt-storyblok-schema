@@ -35,7 +35,7 @@
     "@storyblok/schema": "^0.5.0",
     "eslint": "^10.13.0",
     "storyblok": "4.25.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vue-tsc": "^3.3.13"
   }
 }
