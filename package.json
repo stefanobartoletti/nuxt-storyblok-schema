@@ -2,7 +2,7 @@
   "name": "nuxt-storyblok-schema",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@12.20.0",
+  "packageManager": "pnpm@12.23.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -26,15 +26,15 @@
     "@tailwindcss/vite": "^4.3.5",
     "nuxt": "^4.6.4",
     "tailwindcss": "^4.3.5",
-    "vue": "^3.5.45",
-    "vue-router": "^5.5.0"
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
     "@stefanobartoletti/eslint-config": "^6.3.2",
-    "@storyblok/schema": "^0.7.0",
-    "eslint": "^10.14.0",
-    "storyblok": "4.26.1",
+    "@storyblok/schema": "^0.8.0",
+    "eslint": "^10.15.0",
+    "storyblok": "4.27.1",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.14"
   }
